@@ -9,4 +9,4 @@ Background includes leading security teams, securing distributed Edge, malware a
 
 Currently focused on the design and implementation of strategic security technologies in distributed Edge systems, with particular interest in remote attestation, hardware-based security (TPM, HSM), ARM Trusted Execution Environments (TEE), and secure software design principles. Active in enhancing and automating security workflows, from vulnerability discovery to threat modeling and attack surface reduction.
 
-Connect with me on [LinkedIn](https://www.linkedin.com/in/shahriyar-jalayeri-4386b1228), GitHub: [shahriyar-jalayeri](https://github.com/shjala), or reach out via email at <first name>@posteo.de.
+Connect with me on [LinkedIn](https://www.linkedin.com/in/shahriyar-jalayeri-4386b1228), [GitHub](https://github.com/shjala), or reach out via email at <first name>@posteo.de.
