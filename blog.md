@@ -1,8 +1,7 @@
 ---
 layout: blog
 permalink: /blog/
-title: Rohit Jain | Blog
+title: Shahriyar Jalayeri | Blog
 pagination:
   enabled: true
 ---
-
