@@ -12,4 +12,4 @@ MCEDP is a High Interaction Client Honeypot. Despite other High-Interaction hon
 <br><a href="http://www.irhoneynet.org/?page_id=116" target="_blank">More Info plus donwload links...</a>
 </div>
 
-<p><strong>This is imported from my old WP blog, <a href="https://repret.wordpress.com/2012/09/25/introducing-mcedp-honeyclient/">original post</a>.</strong></p>
+<p><strong>This is imported from my old WP blog, some links might be broken,<a href="https://repret.wordpress.com/2012/09/25/introducing-mcedp-honeyclient/">original post</a>.</strong></p>

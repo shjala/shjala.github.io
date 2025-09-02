@@ -22,4 +22,4 @@ EMET's ROP mitigation works around hooking certain APIs (Like VirtualProtect) wi
 <br><a href="https://github.com/shjalayeri/emet_bypass">Here</a> is the asm code which makes EMET 3.5 deactivated  And actual exploit.
 </div>
 
-<p><strong>This is imported from my old WP blog, <a href="https://repret.wordpress.com/2012/08/08/bypassing-emet-3-5s-rop-mitigations/">original post</a>.</strong></p>
+<p><strong>This is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2012/08/08/bypassing-emet-3-5s-rop-mitigations/">original post</a>.</strong></p>
