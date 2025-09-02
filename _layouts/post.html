@@ -21,7 +21,12 @@ layout: description
 <div>{% include share_buttons.html %}</div>
 
 </div>
-{% if site.disqus.shortname and page.comments %}
-  <hr>
-  {% include disqus_comments.html %}
-{% endif %}
+
+<div id="cusdis_thread"
+data-host="https://cusdis.com"
+data-app-id="d06e644e-508a-4b1f-a8f1-48e720ddeb1f"
+data-page-id="{{ PAGE_ID }}"
+data-page-url="{{ PAGE_URL }}"
+data-page-title="{{ PAGE_TITLE }}"
+></div>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
