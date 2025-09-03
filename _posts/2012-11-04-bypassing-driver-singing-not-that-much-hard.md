@@ -15,10 +15,8 @@ categories: [oldblog, exploting]
 <p style="text-align:justify;">the latest version is not anymore vulnerable but this version still has a valid signature and that’s enough.</p>
 <p style="text-align:justify;"><a href="\assets\img\posts\dcr_sig.png"><img class="aligncenter size-full wp-image-30" title="DCR.sys Signature" alt="" src="\assets\img\posts\dcr_sig.png" height="489" width="419" /></a></p>
 <p style="text-align:justify;">I think it's obvious that you can make the whole process of escalating privilege from normal user to Admin for loading vulnerable drive ( silently with one of <a href="http://www.pretentiousname.com/misc/win7_uac_whitelist2.html" target="_blank">UAC bypass methods</a>) and exploitation pragmatically automatic.</p>
-You can find vulnerable version of drive along the exploit at "<a href="https://github.com/shjalayeri/DriveCrypt" target="_blank">DriveCrypt\x64\Release</a>".
+You can find vulnerable version of drive along the exploit at "<a href="https://gitlab.com/shahjal/drivecrypt-exp" target="_blank">DriveCrypt\x64\Release</a>".
 
 </div>
 
-<p><strong>This is imported from my old WP blog, some links might be broken,<a href="https://repret.wordpress.com/2012/11/04/bypassing-driver-singing-not-that-much-hard/">original post</a>.</strong></p>
-
-You might be able to find the tools linked in this post [here](https://gitlab.com/users/shahjal/projects).
+<p><strong>This is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2012/11/04/bypassing-driver-singing-not-that-much-hard/">original post</a>.</strong></p>

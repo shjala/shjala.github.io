@@ -84,11 +84,9 @@ Overhead cost reduction varies from 10-40%, If you are happy with block coverage
 
 It is possible to further improve "Disposable Probes" for blocks with <script type="math/tex">in</script> degree more than one, one way would be tracking every incoming edge and changing the probe when we had set bits equal to blocks <script type="math/tex">in</script> degree in bitmap. We can further improve this by combining static/dynamic approaches and reduce the initial probes count even more by dominator tree relations. Obviously it is not easy to use this method for self-modifying programs. In the above implementation I skipped the functions entry block (even if we have only one reference to function there are still dynamic address resolution, call table, etc) and assumed a second edge to a block with <script type="math/tex">in</script> degree 1 that is not statically reachable is caused by a bug and therefore crashes the program under the test.
 
-You can find raw benchmark data <a href="https://github.com/shjalayeri/kflog_bp_benchmark">here</a> and a copy of my testing suite KTest in my <a href="https://github.com/shjalayeri/ktest">github</a>.
+You can find raw benchmark data <a href="https://gitlab.com/shahjal/kflog-benchmark">here</a> and a copy of my testing suite KTest in my <a href="https://gitlab.com/shahjal/ktest">github</a>.
 
-<p><strong>This post is imported from my old WP blog, <a href="https://repret.wordpress.com/2017/05/01/improving-coverage-guided-fuzzing-using-static-analysis/">original post</a>.</strong></p>
-
-You might be able to find the tools linked in this post [here](https://gitlab.com/users/shahjal/projects).
+<p><strong>This post is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2017/05/01/improving-coverage-guided-fuzzing-using-static-analysis/">original post here</a>.</strong></p>
 
 <pre>[0] http://www.utdallas.edu/~ewong/SE6367/03-Lecture/10-Hira-01.pdf
 [1] https://dl.acm.org/citation.cfm?id=566186

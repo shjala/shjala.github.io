@@ -124,5 +124,3 @@ NTSTATUS RandProg_2(__in PUCHAR Buffer, __in ULONG BufferLen)
 </pre>
 
 <p><strong>This is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2017/04/27/kfuzz-a-fuzzer-story/">original post</a>.</strong></p>
-
-You might be able to find the tools linked in this post [here](https://gitlab.com/users/shahjal/projects).
