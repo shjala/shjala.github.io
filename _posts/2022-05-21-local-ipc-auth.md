@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implementing Authorization on Linux local IPC using SO_PEERCRED
+title: Authorization on Linux local IPC using SO_PEERCRED
 date: 2022-05-21
 author: Shahriyar Jalayeri
 comments: true

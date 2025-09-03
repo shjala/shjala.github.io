@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reducing Fuzzing Code Coverage Overhead using "Disposable Probes"
+title: Reducing Code Coverage Overhead using "Disposable Probes" (Fuzzing)
 date: 2018-03-21 13:26
 author: Shahriyar Jalayeri
 comments: true

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is PR_SET_CHILD_SUBREAPER what is have to do with double-forked daemon?
+title: What is PR_SET_CHILD_SUBREAPER what is it related to double-forked daemon?
 date: 2021-11-17
 author: Shahriyar Jalayeri
 comments: true
@@ -41,10 +41,10 @@ Interestingly some other books like UNIX Internals A Practical Approach (*publis
 
 Excerpt from UNIX Internals A Practical Approach, Section 2.9.1 Daemon Processes:
 
-> To achieve the desired effect the process must call fork(S) and the parent process should then call the exit(S) or exit(S) system calls.  The child process is now running in a separate process group from the shell and is not a process group leader. This allows the process to call setsid(S) to create a new session in order to divorce itself from its controlling terminal. The process then becomes the session leader and sole member of the newly created session. It is also the process group leader of a newly created process group whose process group ID is set to the process ID of the child process. The process must take care when opening subsequent files. If a file is a terminal device and the O_NOCTTY flag is not passed to open(S), the kernel sets the terminal to be the controlling terminal of the process. This is not the required behavior for a daemon. 
+> To achieve the desired effect the process must call fork(S) and the parent process should then call the exit(S) or exit(S) system calls.  The child process is now running in a separate process group from the shell and is not a process group leader. This allows the process to call setsid(S) to create a new session in order to divorce itself from its controlling terminal. The process then becomes the session leader and sole member of the newly created session. It is also the process group leader of a newly created process group whose process group ID is set to the process ID of the child process. The process must take care when opening subsequent files. If a file is a terminal device and the O_NOCTTY flag is not passed to open(S), the kernel sets the terminal to be the controlling terminal of the process. This is not the required behavior for a daemon.
 
 
 
 Excerpt from UNIX System V Network Programming, section Creating Daemons:
 
-> daemon needs to disassociate itself from the controlling terminal. This prevents signals from the terminal from affecting the daemon and allows the terminal to be reallocated as the controlling terminal for later sessions. Disassociation can be performed by creating a new session for which the daemon will be the session leader. By leaving the old session, the daemon process forces the disassociation between itself and the old session' s controlling terminal. The one drawback with this course of action is the next terminal device that the daemon opens will be allocated as the daemon's controlling terminal, as long as the device is not already some other session' s controlling terminal. This can be avoided by specifying the O_NOCTTY flag to open. 
+> daemon needs to disassociate itself from the controlling terminal. This prevents signals from the terminal from affecting the daemon and allows the terminal to be reallocated as the controlling terminal for later sessions. Disassociation can be performed by creating a new session for which the daemon will be the session leader. By leaving the old session, the daemon process forces the disassociation between itself and the old session' s controlling terminal. The one drawback with this course of action is the next terminal device that the daemon opens will be allocated as the daemon's controlling terminal, as long as the device is not already some other session' s controlling terminal. This can be avoided by specifying the O_NOCTTY flag to open.
