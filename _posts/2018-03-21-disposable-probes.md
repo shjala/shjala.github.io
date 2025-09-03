@@ -88,6 +88,8 @@ You can find raw benchmark data <a href="https://github.com/shjalayeri/kflog_bp_
 
 <p><strong>This post is imported from my old WP blog, <a href="https://repret.wordpress.com/2017/05/01/improving-coverage-guided-fuzzing-using-static-analysis/">original post</a>.</strong></p>
 
+You might be able to find the tools linked in this post [here](https://gitlab.com/users/shahjal/projects).
+
 <pre>[0] http://www.utdallas.edu/~ewong/SE6367/03-Lecture/10-Hira-01.pdf
 [1] https://dl.acm.org/citation.cfm?id=566186
 [2] https://www.cs.princeton.edu/courses/archive/fall03/cs528/handouts/a%20fast%20algorithm%20for%20finding.pdf

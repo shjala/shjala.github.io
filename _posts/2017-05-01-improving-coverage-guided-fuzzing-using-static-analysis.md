@@ -111,3 +111,5 @@ DrillerTest(
 </pre>
 
 <p><strong>This is imported from my old WP blog, some links might be broken,<a href="https://repret.wordpress.com/2017/05/01/improving-coverage-guided-fuzzing-using-static-analysis/">original post</a>.</strong></p>
+
+You might be able to find the tools linked in this post [here](https://gitlab.com/users/shahjal/projects).
