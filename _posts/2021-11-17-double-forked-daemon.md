@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is PR_SET_CHILD_SUBREAPER what is it related to double-forked daemon?
+title: What is PR_SET_CHILD_SUBREAPER, How is it related to double-forked daemon?
 date: 2021-11-17
 author: Shahriyar Jalayeri
 comments: true
