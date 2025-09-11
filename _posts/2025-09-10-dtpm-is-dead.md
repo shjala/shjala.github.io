@@ -147,7 +147,7 @@ Even if you have to prove the system state to a remote verifier to gain access t
 
 ## Is there any hope?
 
-fTPMs are promising, even though they are susceptible to side channel attacks\[3\]\[4\] and software bugs, but I think in general it is much cheaper to push a firmware update to a remote device than replacing a soldered dTPM.
+fTPMs are promising, even though they are susceptible to side channel attacks\[3\]\[4\], software bugs and can't be certified [13], but I think in general it is much cheaper to push a firmware update to a remote device than replacing a soldered dTPM.
 
 For edge computing scenarios where physical access is a primary concern, tamper-evident enclosures offer an alternative approach, detecting rather than preventing physical attacks. These solutions can trigger key deletion when tampering is detected, but they add significant cost and complexity while introducing new failure modes.
 
@@ -169,7 +169,7 @@ References:
 
 \[5\] Nurmi, Henri. “Sniff, There Leaks My BitLocker Key.” WithSecureTM Labs, labs.withsecure.com/publications/sniff-there-leaks-my-bitlocker-key.
 
-\[6\] “TPM Sniffing Attacks Against Non-Bitlocker Targets | Secura.” English, cybersecurity.bureauveritas.com/blog/tpm-sniffing-attacks-against-non-bitlocker-targets.
+\[6\] “TPM Sniffing Attacks Against Non-Bitlocker Targets \| Secura.”, cybersecurity.bureauveritas.com/blog/tpm-sniffing-attacks-against-non-bitlocker-targets.
 
 \[7\] Oberson, Author Julien. TPM Sniffing – SCRT Team Blog. 15 Nov. 2021, blog.scrt.ch/2021/11/15/tpm-sniffing.
 
@@ -182,5 +182,7 @@ References:
 \[11\] *TPM Security — the Linux Kernel  Documentation*. docs.kernel.org/security/tpm/tpm-security.html.
 
 \[12\] tpm2-software community. “Tpm2-software Community.” Tpm2-software Community, tpm2-software.github.io.
+
+\[13\] Jalayeri, Shahriyar. “Point Is Not on the Required Curve!” Shah J., 3 Sept. 2025, defense.sh/tpm/2025/09/03/point-not-on-curve.html.
 
 [^1]:  _It is worth noting that PCR values are changed through a PCR extend operation (hashing the previous value with the current value) so it is difficult to change the value of PCRs to an arbitrary value after boot measurement has happened, think of it like how hard it is to perform a collision attack on SHA256._
