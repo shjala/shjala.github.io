@@ -7,7 +7,7 @@ comments: true
 categories: [tpm]
 ---
 
-TL;DR: Some devices with certain fTPMs failed updates because their TPM didn’t like ECC keys without proper padding, throwing “point is not on the required curve.” when calculating ECDH shared key using `ECDHZGen because X.Bytes()` in Go will put you in trouble.
+TL;DR: Some devices with certain fTPMs failed updates because their TPM didn’t like ECC keys without proper padding, throwing “point is not on the required curve.” when calculating ECDH shared key using `ECDHZGen` because off-spec fTPMs and `X.Bytes()` in Golang will put you in trouble.
 
 ***
 
