@@ -149,7 +149,7 @@ Even if you have to prove the system state to a remote verifier to gain access t
 
 fTPMs are promising, even though they are susceptible to side channel attacks\[3\]\[4\], software bugs and can't be certified [13], but I think in general it is much cheaper to push a firmware update to a remote device than replacing a soldered dTPM.
 
-For edge computing scenarios where physical access is a primary concern, tamper-evident enclosures offer an alternative approach, detecting rather than preventing physical attacks. These solutions can trigger key deletion when tampering is detected, but they add significant cost and complexity while introducing new failure modes.
+Sure, not all dTPMs are created equal, some offer significantly more protection than others. But for edge computing scenarios where physical access is a primary concern, tamper-evident enclosures offer may offer an addition, detecting rather than preventing physical attacks. These solutions can trigger key deletion when tampering is detected, but they add significant cost and complexity while introducing new failure modes.
 
 To be clear, I'm not advocating for abandoning hardware security modules entirely or relying solely on software cryptography. Rather, it may be time to move beyond retrofitting general-purpose security solutions and start developing purpose-built hardware security architectures specifically designed for edge computing threat models.
 
