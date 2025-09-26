@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threat Risk Assessment Tool (Arcg)</title>
+    <script defer src="js/formcalculations.js"></script>
+    <link href="styles/form.css" rel="stylesheet">
+</head>
+
+<body onload='hideTotal()'>
+    <main class="container">
+        <header class="header">
+            <h1>Threat Risk Assessment</h1>
+            <p>For Security Architects</p>
+        </header>
+
+        <form id="riskform" class="risk-form" onsubmit="return false;">
+            <section class="questions-section">
+                <div class="threat-level-section">
+                    <h2 class="section-title">Threat Level</h2>
+
+                    <!-- Expertise Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Expertise
+                        </h3>
+                        <p class="question-text">
+                            The general level of knowledge required to carry out an attack.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_expertise" value="expertise_layman"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Layman</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    No particular expertise is required. Examples may include people who can follow
+                                    simple instructions for existing attack tools, but who can not succeed if the
+                                    instructions or the tools do not work as expected.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_expertise" value="expertise_proficient"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Proficient</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    General security and domain knowledge is required. Professionals with knowledge
+                                    about simple and popular attacks, are capable of mounting them with available tools,
+                                    and if necessary, are able to improvise. For example, IT professionals who can
+                                    modify standard exploits or combine multiple attack techniques without needing
+                                    detailed tutorials or step-by-step guides.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_expertise" value="expertise_expert"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Expert</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Expert security and domain knowledge is required. Experts are familiar with
+                                    underlying algorithms, protocols, hardware, software and concepts. They know
+                                    techniques and tools of existing attacks and are able to create new attacks.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_expertise" value="expertise_multiple_experts"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Multiple Experts</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Expert security and domain knowledge is required for several distinct domains.
+                                    Allows for a situation in which different fields of expertise are required at an
+                                    expert level to succeed with an attack.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Knowledge about target Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Knowledge about target
+                        </h3>
+                        <p class="question-text">
+                            The distribution of information about the target, i.e., the availability of information and
+                            the community size possessing that knowledge.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_knowledge" value="knowledge_public"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Public</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The necessary information is public. Examples include information available on the
+                                    Internet, in documentation, technical standards, or shared without non-disclosure
+                                    agreements (NDAs), such as common protocols, APIs, system architectures, or
+                                    published vulnerability databases.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_knowledge" value="knowledge_restricted"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Restricted</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The information is shared with partners under non-disclosure agreements. For
+                                    example, requirements and design specifications, internal documentation, or
+                                    technical details that must be shared with vendors, contractors, or business
+                                    partners.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_knowledge" value="knowledge_sensitive"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Sensitive</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The information is shared between specific teams, but access is constrained to their
+                                    members. Examples include restricted system configuration parameters, internal
+                                    databases, source code, or technical documentation limited to authorized development
+                                    teams.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_knowledge" value="knowledge_critical"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Critical</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The information is restricted to a few individuals. Access is tightly controlled on
+                                    a strict need to know basis. Examples include root signature keys.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Window of opportunity Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Window of opportunity
+                        </h3>
+                        <p class="question-text">
+                            The access type available to the attacker, and the time window the attacker has to mount a
+                            successful attack.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_wop" value="wop_unlimited" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Unlimited</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Unlimited physical access, or network access for an unlimited time. Examples include
+                                    always-on Internet access, physical access to owned devices, or unrestricted access
+                                    to systems that users legitimately control.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_wop" value="wop_large" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Large</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    High physical and/or remote availability with some time limitations.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_wop" value="wop_medium" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Medium</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Low availability with severe time limitations. Limited physical and/or remote access
+                                    to the target. Physical access to systems or devices without using specialized tools
+                                    (e.g., accessing external ports, connectors, or user-accessible components).
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_wop" value="wop_small" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Small</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Very low availability. Physical access required to perform complex disassembly of
+                                    equipment or systems to access internal components to mount an attack on the asset.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Equipment Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Equipment
+                        </h3>
+                        <p class="question-text">
+                            The equipment required to identify or exploit vulnerabilities.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_equipment" value="equipment_standard"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Standard</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The equipment is readily available to the attacker. The equipment may be part of the
+                                    target itself (e.g. built-in debugging tools, administrative interfaces), or is
+                                    easily obtained. Examples include standard diagnostic tools, common IT devices such
+                                    as laptops, or widely available hardware/software tools.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_equipment" value="equipment_specialised"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Specialised</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The equipment is not readily available to the attacker, but could be acquired
+                                    without undue effort. This could include the purchase of moderate amounts of
+                                    equipment, or the development of more extensive attack scripts.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_equipment" value="equipment_bespoke"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Bespoke</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The equipment is not readily available to the public as it may need to be specially
+                                    produced, or because the equipment is so specialised that its distribution is
+                                    controlled or restricted or may be very expensive.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="tl_equipment" value="equipment_multiple_bespoke"
+                                        onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Multiple Bespoke</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Multiple types of bespoke equipment are required for a successful attack.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Impact Level Section -->
+                <div class="impact-level-section">
+                    <h2 class="section-title">Impact Level</h2>
+
+                    <!-- Safety Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Safety
+                        </h3>
+                        <p class="question-text">
+                            The safety impact refers to the safety of users, operators, and affected parties or
+                            infrastructure. Safety is a first-order requirement in any system that can affect human
+                            wellbeing or critical operations.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_safety" value="none" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">None</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    No injuries.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_safety" value="low" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Low</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Light and moderate injuries.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_safety" value="medium" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Medium</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Severe and life-threatening injuries with probable survival.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_safety" value="high" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">High</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Life-threatening injuries with uncertain survival and fatal injuries.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Financial
+                        </h3>
+                        <p class="question-text">
+                            The financial impact includes all direct and indirect financial damages of all stakeholders.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_financial" value="none" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">None</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    No discernible effects or appreciable consequences for the stakeholders.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_financial" value="low" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Low</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The financial damage remains tolerable for the stakeholders.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_financial" value="medium" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Medium</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    There are substantial financial losses which do not threaten the existence of the
+                                    stakeholders.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_financial" value="high" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">High</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The financial damage threatens the existence of the stakeholders.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Operational Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Operational
+                        </h3>
+                        <p class="question-text">
+                            Operational impact refers to operational damages which have little or no safety or financial
+                            impact, for instance the loss of secondary functionalities such as convenience features, or
+                            non-critical systems and services.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_operational" value="none" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">None</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    There is no discernible effect.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_operational" value="low" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Low</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The appearance of an item or an audible notification annoys between 25% and 75% of
+                                    users.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_operational" value="medium" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Medium</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    The degradation or loss of a secondary function, or the degradation of a primary
+                                    function.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_operational" value="high" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">High</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Loss of a primary function which leaves the system inoperable and potentially
+                                    affects safety or legislative requirements.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Privacy and Legislative Section -->
+                    <div class="question-group">
+                        <h3 class="question-title">
+                            Privacy and Legislative
+                        </h3>
+                        <p class="question-text">
+                            Privacy violations and legislative compliance impacts affecting personal data protection and
+                            regulatory requirements.
+                        </p>
+                        <div class="radio-group">
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_privacy" value="none" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">None</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    There is no discernible effect.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_privacy" value="low" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Low</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Privacy violations without direct potential for abuse, or legislative violations
+                                    with no appreciable consequences, e.g., a warning without a fine.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_privacy" value="medium" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">Medium</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Privacy violations which lead to abuse, or legislative violations with business and
+                                    financial impact such as fines or reputation loss.
+                                </div>
+                            </div>
+                            <div class="option-container">
+                                <label class="radio-option">
+                                    <input type="radio" name="il_privacy" value="high" onclick="calculateTotal()">
+                                    <span class="checkmark"></span>
+                                    <span class="option-text">High</span>
+                                    <button type="button" class="info-toggle" onclick="toggleDescription(this)">
+                                        ?
+                                    </button>
+                                </label>
+                                <div class="option-description">
+                                    Privacy violations of multiple stakeholders which lead to abuse, or legislative
+                                    violations with significant business and financial impact, such as significant loss
+                                    of market share, trust or reputation.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="results-section">
+                <div id="totalRisk" class="risk-result"></div>
+            </section>
+        </form>
+
+        <footer class="footer">
+            <p>This tool is provided by <a href="https://defense.sh/" target="_blank"
+                    rel="noopener noreferrer">defense.sh</a></p>
+        </footer>
+    </main>
+</body>
+
+</html>

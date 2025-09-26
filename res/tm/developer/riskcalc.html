@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Threat Risk Assessment Tool (Dev)</title>
+        <script defer src="js/formcalculations.js"></script>
+        <link href="styles/form.css" rel="stylesheet">
+</head>
+
+<body onload='hideTotal()'>
+        <main class="container">
+                <header class="header">
+                        <h1>Threat Risk Assessment</h1>
+                        <p>For Developers</p>
+                </header>
+
+                <form id="riskform" class="risk-form" onsubmit="return false;">
+                        <section class="questions-section">
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Data Access Risk
+                                        </h3>
+                                        <p class="question-text">
+                                                Could this give an attacker access to data they shouldn't see?
+                                                (Think: user info, payment data, internal business data, API keys,
+                                                passwords, etc.)
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="unauthorized_acc" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="unauthorized_acc" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                System Modification Risk
+                                        </h3>
+                                        <p class="question-text">
+                                                Could an attacker use this to change code, databases, configurations, or
+                                                third-party services you use?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="unauthorized_chg" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="unauthorized_chg" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Audit Trail Risk
+                                        </h3>
+                                        <p class="question-text">
+                                                Could this allow changes happen without appearing in logs, version
+                                                control, or monitoring systems?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="unaudited_chg" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="unaudited_chg" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Service Disruption Risk
+                                        </h3>
+                                        <p class="question-text">
+                                                Could exploitation of this cause damage that requires rebuilding,
+                                                restoring from backups, or manual intervention to fix?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="perm_dos" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="perm_dos" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Authentication Bypass
+                                        </h3>
+                                        <p class="question-text">
+                                                Can someone exploit this without logging in or having an account?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="no_authentication" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="no_authentication" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Privilege Requirements
+                                        </h3>
+                                        <p class="question-text">
+                                                Does the attacker need to be a system admin, database admin, or have
+                                                elevated permissions?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="privileged_acc" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="privileged_acc" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Attack Vector
+                                        </h3>
+                                        <p class="question-text">
+                                                Could this issue be exploited work over the web/API, or does someone
+                                                need to be on your local network?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="remote_attack" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes (Remote)</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="remote_attack" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No (Local network only)</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Exploit Complexity
+                                        </h3>
+                                        <p class="question-text">
+                                                Can someone exploit this with standard hacking tools, or do they need to
+                                                code something from scratch?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="exploit_code" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Standard tools available</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="exploit_code" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Custom code required</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Special Conditions
+                                        </h3>
+                                        <p class="question-text">
+                                                Can this only be exploited under specific circumstances (certain
+                                                configs, timing, user actions, etc.)?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="special_cond" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="special_cond" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+
+                                <div class="question-group">
+                                        <h3 class="question-title">
+
+                                                Dependencies
+                                        </h3>
+                                        <p class="question-text">
+                                                Does this require compromising databases, APIs, or other services before
+                                                it can be exploited?
+                                        </p>
+                                        <div class="radio-group">
+                                                <label class="radio-option">
+                                                        <input type="radio" name="other_components" value="yes"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">Yes</span>
+                                                </label>
+                                                <label class="radio-option">
+                                                        <input type="radio" name="other_components" value="no"
+                                                                onclick="calculateTotal()">
+                                                        <span class="checkmark"></span>
+                                                        <span class="option-text">No</span>
+                                                </label>
+                                        </div>
+                                </div>
+                        </section>
+
+                        <section class="results-section">
+                                <div id="totalRisk" class="risk-result"></div>
+                        </section>
+                </form>
+
+                <footer class="footer">
+                        <p>This tool is provided by <a href="https://defense.sh/" target="_blank"
+                                        rel="noopener noreferrer">defense.sh</a></p>
+                </footer>
+        </main>
+
+</body>
+
+</html>
