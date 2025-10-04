@@ -7,7 +7,7 @@ comments: true
 categories: [tpm, exploiting, unix]
 ---
 
-While I researching the recently added Linux kernel TPM HMAC protection (read about it [here](https://defense.sh/tpm/2025/09/10/dtpm-is-dead.html)), I looked around and found a 20-year‑old, classic buffer overflow in one of the Infineon TPM drivers [1]:
+While I researching the recently added Linux kernel TPM HMAC protection (read about it [here](https://defense.sh/tpm/2025/09/10/dtpm-is-dead.html)), I looked around and found a 20-year‑old, straight out of 90's [4], classic buffer overflow in one of the Infineon TPM drivers [1]:
 
 ```
 static int tpm_inf_recv(struct tpm_chip *chip, u8 * buf, size_t count)
@@ -32,6 +32,8 @@ Could a malicious TPM firmware have been drip‑feeding kernel overflows into se
 
 I’ve already reported it upstream [3].
 
+P.S. As Xeno Kovah pointed out this is a classic example of [Hardware Involved Software Attacks](https://web.archive.org/web/20230120155207/https://dl.packetstormsecurity.net/papers/general/Forristal_Hardware_Involved_Software_Attacks.pdf).
+
 ---
 
 \[1\]  https://github.com/torvalds/linux/blob/cbf33b8e0b360f667b17106c15d9e2aac77a76a1/drivers/char/tpm/tpm_infineon.c#L245
@@ -39,3 +41,5 @@ I’ve already reported it upstream [3].
 \[2\] stacksmashing. “Breaking Bitlocker \- Bypassing the Windows Disk Encryption.” YouTube, 3 Feb. 2024, [www.youtube.com/watch?v=wTl4vEednkQ](http://www.youtube.com/watch?v=wTl4vEednkQ).
 
 \[3\] https://lore.kernel.org/all/20251004090413.8885-1-shahriyar@posteo.de/
+
+\[4\] Aleph One. “Smashing the Stack for Fun and Profit.” Phrack, 8 Nov. 1996, phrack.org/issues/49/14.
