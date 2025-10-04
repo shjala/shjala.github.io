@@ -4,7 +4,7 @@ title: Pwnypot HoneyClient
 date: 2012-09-25 23:54
 author: Shahriyar Jalayeri
 comments: true
-categories: [oldblog, exploting]
+categories: [oldblog, exploiting]
 ---
 
 Pwnypot is a High Interaction Client Honeypot. Despite other High-Interaction honeyClients which detect malicious servers based on system changes (file system and registery modifications, invoked/killed processes, …), Pwnypot uses a new approach. To accomplish this, Pwnypot uses exploit detection methods to detect drive-by downloads at exploitation stage and dump malware file. Using this approach, Pwnypot eliminates some limitations of current HoneyClients and improves the detection speed of High-Interaction client Honeypots.

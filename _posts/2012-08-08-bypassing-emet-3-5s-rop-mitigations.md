@@ -4,7 +4,7 @@ title: Bypassing EMET 3.5's ROP Mitigations
 date: 2012-08-08
 author: Shahriyar Jalayeri
 comments: true
-categories: [oldblog, exploting]
+categories: [oldblog, exploiting]
 ---
 
 I have managed to bypass EMET 3.5, which is recently released after Microsoft BlueHat Prize, and wrote full-functioning exploit for CVE-2011-1260 (I choosed this CVE randomly!) with all EMET's ROP mitigation enabled.
