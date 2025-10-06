@@ -19,4 +19,6 @@ You can find vulnerable version of drive along the exploit at "<a href="https://
 
 </div>
 
+---
+
 <p><strong>This is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2012/11/04/bypassing-driver-singing-not-that-much-hard/">original post</a>.</strong></p>

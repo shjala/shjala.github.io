@@ -9,6 +9,8 @@ categories: [oldblog, re]
 
 <div dir="ltr" lang="en">
 
+**Update: Apparently, I beat everyone else to the punch and ended up in 1st place!**
+
 <p style="text-align:justify;">This is my write-up for Amnpardaz (Iranian AV company, I’ve <a href="https://github.com/shjalayeri/Padvish-AV">played</a> with their products before) and ISC (Iranian Society of Cryptology) Ransomware’s data decryption challenge. I’m not lying, it was really easy comparing to CTFs that I’ve played (and failed ;) ). It was three steps in total, you get a bunch of files for each step and you most decrypt them in order to get the next step email address.</p>
 
 <h2><strong>Step One</strong></h2>
@@ -391,5 +393,7 @@ zOEqsCGMWS4sitVN7/eC3dEYXfN5zoiCRIlAEEq9sngtKqa1d0mM
 Decrypting the file content  gave me final email address which was <em><strong>“padvish-quest@amnpardaz.com”</strong></em>.
 
 <br><br>You can get files from <a href="https://gitlab.com/shahjal/bloodmoney">here</a>.
+
+---
 
 <p><strong>This is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2015/09/08/blood-money/">original post</a>.</strong></p>

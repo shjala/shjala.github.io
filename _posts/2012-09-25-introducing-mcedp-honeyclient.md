@@ -12,4 +12,6 @@ Pwnypot is a High Interaction Client Honeypot. Despite other High-Interaction h
 <br><a href="https://gitlab.com/shahjal/pwnypot" target="_blank">Find Pwnypot here.</a>
 </div>
 
+---
+
 <p><strong>This is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2012/09/25/introducing-mcedp-honeyclient/">original post</a>.</strong></p>
