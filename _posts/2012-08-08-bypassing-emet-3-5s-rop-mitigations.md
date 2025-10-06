@@ -18,4 +18,6 @@ EMET's ROP mitigation works around hooking certain APIs (Like VirtualProtect) wi
 
 UPDATE : <strong><em>MS claims it was aware of this kind of bypasses, so I bypassed EMET ROP mitigations using another EMET's implementation mistake. EMET team forget about the KernelBase.dll and left all its functions unprotected. so I used <a href="http://twitter.com/antic0de" target="_blank">@antic0de</a>'s <a href="http://t.co/qqV1ooaH">method </a>for finding base address of kernelbase.dll at run-time, then I used VirtualProtect inside the kernelbase.dll, not ntdll.dll or krenel32.dll. you can get new exploit at the end of this post.</em></strong>
 
+---
+
 <p><strong>This is imported from my old WP blog, some links might be broken, link to the <a href="https://repret.wordpress.com/2012/08/08/bypassing-emet-3-5s-rop-mitigations/">original post</a>.</strong></p>

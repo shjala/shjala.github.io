@@ -86,8 +86,6 @@ It is possible to further improve "Disposable Probes" for blocks with <script ty
 
 You can find raw benchmark data <a href="https://gitlab.com/shahjal/kflog-benchmark">here</a> and a copy of my testing suite KTest in my <a href="https://gitlab.com/shahjal/ktest">github</a>.
 
-<p><strong>This post is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2017/05/01/improving-coverage-guided-fuzzing-using-static-analysis/">original post here</a>.</strong></p>
-
 <pre>[0] http://www.utdallas.edu/~ewong/SE6367/03-Lecture/10-Hira-01.pdf
 [1] https://dl.acm.org/citation.cfm?id=566186
 [2] https://www.cs.princeton.edu/courses/archive/fall03/cs528/handouts/a%20fast%20algorithm%20for%20finding.pdf
@@ -95,3 +93,7 @@ You can find raw benchmark data <a href="https://gitlab.com/shahjal/kflog-benchm
 [4] http://www.ertl.jp/chstone/
 [5] http://www.ece.northwestern.edu/~ash451/docs/aadebug05-pmu.pdf
 [6] http://design.cs.iastate.edu/papers/AOSD-2005/aosd05.pdf</pre>
+
+---
+
+<p><strong>This post is imported from my old WP blog, some links might be broken, <a href="https://repret.wordpress.com/2017/05/01/improving-coverage-guided-fuzzing-using-static-analysis/">original post here</a>.</strong></p>
