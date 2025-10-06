@@ -4,7 +4,7 @@ title: Fuzzing and Instrumenting Windows Kernel
 date: 2017-04-27 14:18
 author: Shahriyar Jalayeri
 comments: true
-categories: [oldblog, fuzzing]
+categories: [oldblog, fuzzing, kernel]
 ---
 
 <div dir="ltr" lang="en">

@@ -4,7 +4,7 @@ title: Infineon TPM Driver Vulnerability Lurking for ~20 Years
 date: 2025-10-04
 author: Shahriyar Jalayeri
 comments: true
-categories: [tpm, exploiting, unix]
+categories: [tpm, exploiting, unix, kernel]
 ---
 
 While I researching the recently added Linux kernel TPM HMAC protection (read about it [here](https://defense.sh/tpm/2025/09/10/dtpm-is-dead.html)), I looked around and found a 20-year‑old, straight out of 90's [4], classic buffer overflow in one of the Infineon TPM drivers [1] [2]:
