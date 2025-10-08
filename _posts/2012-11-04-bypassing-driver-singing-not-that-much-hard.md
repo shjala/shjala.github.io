@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Defeating Windows Kernel Driver Singing Enforcement, Not That Hard!
+title: Defeating Windows Kernel Driver Singing Enforcement
 date: 2012-11-04 12:51
 author: Shahriyar Jalayeri
 comments: true
