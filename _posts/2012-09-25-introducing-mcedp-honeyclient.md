@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Pwnypot HoneyClient
+title: Introducing Pwnypot - Deteting Drive-By-Download Zerodays
 date: 2012-09-25 23:54
 author: Shahriyar Jalayeri
 comments: true

@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Bypassing EMET 3.5's ROP Mitigations
+title: Bypassing Award-Winning ($50k) EMET 3.5's ROP Mitigations
 date: 2012-08-08
 author: Shahriyar Jalayeri
 comments: true
