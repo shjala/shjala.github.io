@@ -7,7 +7,7 @@ comments: true
 categories: [unix, sec-process]
 ---
 
-Sure, nobody really cares about a security model introduced way back in the 1970s [1][2], the title is just my attempt at being funny. I can’t exactly remember where I first read about the inherent covert channel in the BLP design, but it stuck with me as one of the earliest (and most interesting) protocol design vulnerabilities I came across.
+The title is my attempt at humor and a excuse to discuss a security model introduced way back in the 1970s [1][2]. I can’t exactly remember where I first read about the inherent covert channel in the BLP design, but it stuck with me as one of the earliest (and one of the most interesting) protocol design flaws I came across.
 
 BLP was designed around the military classification systems and the "need to know" principle used by the U.S. Department of Defense. At its core BLP has two fundamental properties:
 

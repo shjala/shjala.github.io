@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Infineon TPM Driver Vulnerability Lurking for ~20 Years
+title: Linux Kernel Vulnerability Lurking for ~20 Years
 date: 2025-10-04
 author: Shahriyar Jalayeri
 comments: true
